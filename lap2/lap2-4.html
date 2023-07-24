@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+</head>
+<body>
+    <form action="form-echo.php" method="get">
+    USERNAME :
+    <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        pattern="[A-Z]{1,}"><br><br>
+    รหัสนักศึกษา:
+    <input
+        type="text"
+        name="password"
+        pattern="[0-9]{2}-{1}[0-9]{6}-{1}[0-9]{4}-{1}[0-9]{1}"
+        placeholder="xx-xxxxxx-xxxx-x" 
+        title="err" required><!--64-040626-3631-5--><br><br>
+    Home:
+    <input
+        type="text"
+        name="home"
+        pattern="[0-9]{3}/[0-9]{1}"
+        placeholder="xxx/x"
+        pattern="[A-Z]{1,}"><br><br>
+    Code:
+    <input
+        type="text"
+        name="code"
+        pattern="[A-Z]{3}[0-9]{2}"
+        placeholder="xxxxx"
+        pattern="[A-Z]{1,}"><br><br>
+    ชื่อ-สกุล:
+    <input
+        type="text"
+        name="username-th"
+        pattern="[ก-๙]{1,}"
+        placeholder="xxxxx"
+        pattern="[A-Z]{1,}"><br>
+
+    <p><label>สาขาวิชา:</label>
+    <select name="dept">
+        <option value="">--Please choose an option--</option>
+        <option value="CS">CS</option>
+        <option value="IC">IC</option>
+        <option value="MA">MA</option>
+        <option value="IMI">IMI</option>
+        <option value="AS">AS</option>
+        <option value="AFET">AFET</option>
+    </select>
+    <p><input type="submit" value="Submit">
+    </form>
+</body>
+</html>

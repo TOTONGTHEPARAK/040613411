@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+</head>
+<style>
+    .vl {
+            width: 500px;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+            height: 735px;
+            border-bottom: 2px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    .vr {
+        margin: 10px;
+    }
+</style>
+<body>
+    
+    <div class="vl">
+        <div class="vr">
+    <h2>แบบฟอร์มจองทัวร์</h2>
+    <fieldset>
+        <legend>
+            ข้อมูลทั้วไป
+        </legend>
+        ชื่อ-สกุล:<br>
+        <input type="text"
+        placeholder="กรอกชื่อ-สกุล"/>*<br>
+        Email:<br>
+        <input type="text"/>*<br>
+        โทรศัพท์:<br>
+        <input type="text"
+        placeholder="+66"/>*<br>
+        ที่อยู่:<br>
+        <textarea rows="4" cols="40">
+        </textarea><br>
+        รหัสไปรษณีย์:
+        <input type="text" size="4" pattern="[0-9]{5}"/><br>
+        รูปผู้จอง:
+        <input type="file"/>
+    </fieldset>
+    <fieldset>
+    
+        <legend>
+            ข้อมูลเข้าสู้ระบบ
+        </legend>
+        Username:<br>
+        <form>
+        <input type="text" pattern="[0-9a-zA-Z]8+"/><br>
+        </form>
+        <i>ประกอบด้วยตัวเลข ตัวอักษร หรือ _ ตั้งแต่ 8 ตัวขึ้นไป</i><br>
+        Password:<br>
+        <form>
+        <input type="text" pattern=".{8,}"/><br>
+        </form>
+        <i>ประกอบด้วยตัวอักขระอะไรก็ได้ 8 ตัวขึ้นไป</i>
+    </fieldset>
+    <fieldset>
+        <legend>
+            ข้อมูลทัวร์ที่ต้องการ
+        </legend>
+        แพคเก็จทัวร์:
+        <select>
+            <option>--select--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        </select><br>
+        วันที่เดินทาง:
+        <input type="date"/><br>
+        
+    <form>
+        จำนวนผู้เดินทาง
+        <input type="text" size="4"
+        pattern="[1-9]|10"/><br>
+    </form>
+        เน้นการท่องเทียวแบบใด?
+        <form>
+            <input type="checkbox">
+            <label for="vehicle1">ชอปปิ้ง</label><br>
+            <input type="checkbox" >
+            <label for="vehicle2">ธรรมชาติ</label><br>
+            <input type="checkbox" >
+            <label for="vehicle3">ทะเล</label>
+          </form>
+    </fieldset><br>
+    ยอมรับเงือนไขและข้อตกลง
+        <input type="radio" name="asd">
+        <label>I agree</label>
+        <input type="radio" name="asd">
+        <label>I disagree</label>
+    &nbsp;&nbsp;
+    <button>จอง</button>
+    </div>
+</div>
+</body>
+</html>

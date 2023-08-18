@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scholarship Eligibility Checker</title>
+  <script>
+    let student = [
+      {
+        fullname: 'นายตั้งใจ เรียนมาก',
+        age: 18,
+        year: 1,
+        gpa: 3.40,
+        help: true
+      },
+      {
+        fullname: 'นายส่งงาน ตลอดมา',
+        age: 19,
+        year: 2,
+        gpa: 3.00,
+        help: false
+      },
+      {
+        fullname: 'นางสาวใสใจ ดีงาม',
+        age: 20,
+        year: 3,
+        gpa: 2.90,
+        help: true
+      },
+      {
+        fullname: 'นางสาวเรียนรู้ ดีเยี่ยม',
+        age: 21,
+        year: 4,
+        gpa: 3.75,
+        help: true
+    },
+    {
+        fullname: 'นายเรียนไว แต่ไม่ช่วยงาน',
+        age: 22,
+        year: 3,
+        gpa: 3.30,
+        help: false
+    },
+    {
+        fullname: 'นางสาวไม่รู้จักช่วยงาน',
+        age: 23,
+        year: 2,
+        gpa: 2.60,
+        help: false
+    },
+    {
+        fullname: 'นายปานกลาง เกรดเฉลี่ย',
+        age: 24,
+        year: 1,
+        gpa: 2.85,
+        help: true
+    },
+    {
+        fullname: 'นายธงทอง เทพยาโพด',
+        age: 24,
+        year: 2,
+        gpa: 3.20,
+        help: true
+    }
+    ];
+      // สามารถเพิ่มข้อมูลนักศึกษาเพิ่มเติมที่นี่
+
+    function checkScholarshipEligibility() {
+      for (let i = 0; i < student.length; i++) {
+        const currentStudent = student[i];
+        let result = '';
+
+        if ((currentStudent.year >= 2 && currentStudent.help && currentStudent.gpa >= 2.75) ||
+            currentStudent.gpa >= 3.20) {
+          result = 'ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์';
+          if (currentStudent.year >= 1 && currentStudent.help) {
+            result += ' และยังช่วยงานภาควิชาด้วย';
+          }
+        } else {
+          result = 'ไม่ได้รับทุนการศึกษา เนื่องจาก';
+          if (currentStudent.year < 2 || currentStudent.gpa < 3.20) {
+            result += ' เกรดเฉลี่ยไม่ถึงเกณฑ์';
+          }
+          if (currentStudent.year >= 2 || currentStudent.help) {
+            result += ' และไม่ได้ช่วยงานภาควิชา';
+          }
+        }
+
+        console.log(currentStudent.fullname + ' เกิดเมื่อปี ' + (2563 - currentStudent.age) + ' ' + result);
+      }
+    }
+
+    function summarizeScholarshipEligibility() {
+      const summary = {};
+
+      for (let i = 0; i < student.length; i++) {
+        const currentStudent = student[i];
+        let result = '';
+
+        if ((currentStudent.year >= 2 && currentStudent.help && currentStudent.gpa >= 2.75) ||
+            currentStudent.gpa >= 3.20) {
+          result = 'ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์';
+          if (currentStudent.year >= 1 && currentStudent.help) {
+            result += ' และยังช่วยงานภาควิชาด้วย';
+          }
+        } else {
+          result = 'ไม่ได้รับทุนการศึกษา เนื่องจาก';
+          if (currentStudent.year < 2 || currentStudent.gpa < 3.20) {
+            result += ' เกรดเฉลี่ยไม่ถึงเกณฑ์';
+          }
+          if (currentStudent.year >= 2 || currentStudent.help) {
+            result += ' และไม่ได้ช่วยงานภาควิชา';
+          }
+        }
+
+        if (!summary.hasOwnProperty(currentStudent.year)) {
+          summary[currentStudent.year] = [];
+        }
+        summary[currentStudent.year].push(currentStudent.fullname + ' ' + result);
+      }
+      const check = /ไม่ได้รับ/;
+      for (const year in summary) {
+        
+        console.log('ชั้นปีที่ ' + year);
+        for (const studentInfo of summary[year]) {
+            let x = studentInfo.match(check);
+            if(x=="ไม่ได้รับ"){
+                console.log("ไม่มี");
+            }else{
+                console.log(studentInfo);
+            }
+          
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+    <h1>การตรวจสอบสิทธิ์รับทุนการศึกษา</h1>
+    <button onclick="checkScholarshipEligibility()">ตรวจสอบ</button>
+    <button onclick="summarizeScholarshipEligibility()">สรุป</button>
+</body>
+</html>

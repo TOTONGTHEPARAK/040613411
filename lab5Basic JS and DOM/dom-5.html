@@ -1,0 +1,43 @@
+<html>
+<head><meta charset="utf-8">
+<script>
+    function add(){
+        var nameInput = document.getElementById("name")
+        var namev = nameInput.value;
+        var addressInput = document.getElementById("address")
+        var addressv = addressInput.value;
+        var phoneInput = document.getElementById("phone")
+        var phonev = phoneInput.value;
+        var tr = document.createElement("tr")
+        var a = document.createElement("td");
+        a.innerHTML = namev
+        var b = document.createElement("td");
+        b.innerHTML = addressv
+        var c = document.createElement("td");
+        c.innerHTML = phonev
+
+        
+        var x = document.getElementById("tb");
+        x.appendChild(tr)
+        x.appendChild(a)
+        x.appendChild(b)
+        x.appendChild(c)
+        document.getElementById("myform").reset();
+    }
+</script>
+</head>
+<body>
+    <form id="myform">
+        ชื่อลูกค้า : <input type="text" id="name"><br>
+        ที่อยู่ : <input type="text" id="address"><br>
+        โทรศัพท์ : <input type="text" id="phone"><br>
+        <input type="button" value="เพื่ม" onclick="add()"><br><br>
+    </form>
+    
+    <table border="1" id="tb">
+        <th>ชื่อลูกค้า</th>
+        <th>ที่อยู่</th>
+        <th>โทรศัพท์</th>
+    </table>
+</body>
+</html>

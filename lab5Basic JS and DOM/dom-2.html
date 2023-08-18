@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input1">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select><input type="number" id="input2">=<input type="number" id="total">
+    <button onclick="cal()">Cal</button>
+</body>
+</html>
+
+<script>
+
+function cal()
+{
+    let option = document.getElementById('op').value;
+
+    if(option =="+")
+    {
+
+    let intput1 = document.getElementById('input1').value;
+    let intput2 = document.getElementById('input2').value;
+    let total =   document.getElementById('total');
+    var getotal =  parseInt(intput1) + parseInt(intput2);
+    total.value = getotal;
+    }
+    else   if(option =="-")
+    {
+
+    let intput1 = document.getElementById('input1').value;
+    let intput2 = document.getElementById('input2').value;
+    let total =   document.getElementById('total');
+    var getotal =  parseInt(intput1) - parseInt(intput2);
+    total.value = getotal;
+    }else if(option =="*")
+    {
+
+    let intput1 = document.getElementById('input1').value;
+    let intput2 = document.getElementById('input2').value;
+    let total =   document.getElementById('total');
+    var getotal =  parseInt(intput1) * parseInt(intput2);
+    total.value = getotal;
+    }
+   else if(option =="/")
+    {
+
+    let intput1 = document.getElementById('input1').value;
+    let intput2 = document.getElementById('input2').value;
+    let total =   document.getElementById('total');
+    var getotal =  parseInt(intput1) / parseInt(intput2);
+    total.value = getotal;
+    }
+
+
+
+}
+</script>

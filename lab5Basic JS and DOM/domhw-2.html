@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function changeColor(elementId) {
+          const element = document.getElementById(elementId);
+          const inputValue = element.value.trim();
+    
+          if (inputValue !== '') {
+            element.style.color = 'green';
+          } else {
+            element.style.color = 'black';
+          }
+        }
+      </script>
+</head>
+<body>
+    <div>
+      <label>Name:</label>
+      <input type="text" id="name" onchange="changeColor('name')">
+    </div>
+    <div>
+      <label>age:</label>
+      <input type="number" id="age" onchange="changeColor('age')">
+    </div>
+    <div>
+      <label>Birthdate:</label>
+      <input type="text" id="Birthdate" onchange="changeColor('Birthdate')">
+    </div>
+</body>
+</html>

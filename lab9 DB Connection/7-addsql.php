@@ -1,5 +1,10 @@
 <?php include "connect.php" ?>
 <?php
+    $filename = $_POST["username"].".jpg"; //เปลี่ยนชื่อ file ให่เป็น .jpg
+    $tempname = $_FILES["image"]["tmp_name"];  //จะเก็บไว้ใน tempname
+    $folder = "./img/" . $filename; //folder ที่เก็บรูป จะเอารูปมาเก็บไว้ที่ folder
+    //print_r($_FILES["image"]);
+    move_uploaded_file($tempname, $folder); //ย้ายไฟล์ จาก tempname ไปยัง folder
     $stmt = $pdo->prepare("INSERT INTO member VALUES (?, ?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $_POST["username"]);
     $stmt->bindParam(2, $_POST["password"]);
